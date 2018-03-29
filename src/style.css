@@ -1,0 +1,44 @@
+.gameContainer{
+  height: 500px;
+  width:  500px;
+  background-color: lightblue;
+  margin: auto;
+  position: relative;
+}
+
+.dog{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: red;
+}
+
+.critter, .rat{
+
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  float: right;
+}
+
+.rat{
+  background-color: grey;
+  margin-top: 100px;
+}
+
+.deathAnimation {
+  animation-name: rotatez;
+  animation: rotatez 5s 3 alternate;
+}
+
+@keyframes rotatez {
+  0% {
+    transform: perspective(1500px) rotateZ(0);
+  }
+  50% {
+    transform: perspective(500px) rotateZ(150deg);
+  }
+  100% {
+    transform: perspective(500px) rotateZ(10deg);
+  }
+}
