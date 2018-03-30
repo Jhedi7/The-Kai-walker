@@ -82,12 +82,20 @@ $(document).ready(function () {
     });
   });
 
-  setInterval(collisionDetection, 250);
+  //setInterval(collisionDetection, );
 
   function addScore() {
     scoreBoard.css('font-size', '20px');
     scoreBoard.html(score);
   }
+
+  // function squirrel(){
+  //   $('.squirrel').css({ }).animate({});
+  // }
+
+  // squirrel();
+
+
 
 
 });
