@@ -102,13 +102,16 @@ function collisionDetection(rectone, recttwo) {
         r1y > r2y + r2h ||
         r1x > r2x + r2w ||
         r1x + r1w < r2x) {
-      return false;
+
+    console.log('also here')
+    debugger;
     } else {
-      return true;
+      //return true;
+      console.log('here');
     }
   }
 
-  $(document).keyup(function (e) {
+  setInterval(function (e) {
     $('.critter').each(function () {
       if (collisionDetection('.dog', $(this))) {
         $(this).addClass('deathAnimation');
@@ -122,8 +125,9 @@ function collisionDetection(rectone, recttwo) {
       }
     });
   });
+  250
 
-  setInterval(collisionDetection, 250);
+  //setInterval(collisionDetection, 250);
 
   function addScore() {
     scoreBoard.css('font-size', '20px');
