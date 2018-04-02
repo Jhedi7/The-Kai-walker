@@ -2,8 +2,6 @@ body{
   background-color: black;
   font-family: 'Press Start 2P', cursive;
 }
-
-
 .landingImg{
   height: 600px;
   width: 70%;
@@ -11,6 +9,7 @@ body{
   margin-top: 50px;
 
 }
+
 div.landingImg{
     background-image: url("landing_backdrop.gif");
     background-size: cover;
