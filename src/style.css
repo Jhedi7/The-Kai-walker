@@ -2,11 +2,7 @@ body{
   background-color: black;
   font-family: 'Press Start 2P', cursive;
 }
-.score{
-  font-family: 'Press Start 2P', cursive;
-  margin-top: -40px;
-  color: white;
-}
+
 
 .landingImg{
   height: 600px;
@@ -236,5 +232,8 @@ div.right{
 
 }
 
-
-
+.score{
+  font-family: 'Press Start 2P', cursive!important;
+  margin-top: -60px;
+  color: white;
+}

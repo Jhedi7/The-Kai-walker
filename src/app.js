@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.onload = function () {
 
   $('.gameContainer').scroll(function() {
 
@@ -139,12 +139,9 @@ $(document).ready(function () {
 
 
 
-  //window.setInterval(collisionDetection, 250);
+  window.setInterval(collisionDetection, 250);
 
-  let collision = setInterval(function () {
-
-
-
+  function collisionDetection() {
     let dogWidth, dogHeight, dogX, dogY, critterWidth, critterHeight, critterX, critterY;
 
     dogWidth = dog.outerWidth();
@@ -165,18 +162,20 @@ $(document).ready(function () {
 
     }
 
+};
 
+$('.critter').each(function () {
+      if (collisionDetection('.dog', $(this))) {
+        $(this).addClass('deathAnimation');
 
- }, 250);
+        score+=1;
+        addScore();
+      } else if ($(this).hasClass('deathAnimation')) {
+        $(this).removeClass('deathAnimation');
+        $(this).css('display', 'none');
 
-// var treeHit = false;
-//    $('.critter').each(function () {
-//     treeHit = collision(dog, $(this));
-//     if (treeHit == true) {
-//     console.log('hit2');
-// }
-
-// });
+      }
+    });
 
  // $('.critter').each(function () {
  //      if (collisionDetection('.dog', $(this))) {
@@ -221,4 +220,4 @@ $(document).ready(function () {
 
 
 
-});
+};
