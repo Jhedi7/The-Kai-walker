@@ -1,35 +1,141 @@
-.gameContainer{
+body{
+  background-color: black;
+  font-family: 'Press Start 2P', cursive;
+}
+.score{
+  font-family: 'Press Start 2P', cursive;
+  margin-top: -40px;
+  color: white;
+}
+
+.landingImg{
   height: 600px;
-  width:  550px;
-  background-color: lightblue;
+  width: 70%;
   margin: auto;
+  margin-top: 50px;
+
+}
+div.landingImg{
+    background-image: url("landing_backdrop.gif");
+    background-size: cover;
+}
+
+.dogRunning{
+  height: 100px;
+  width: 140px;
+  margin-left: 430px;
+  margin-top: 320px;
+  position: absolute;
+}
+div.dogRunning{
+  background-image: url("runningDog.gif");
+  background-size: cover;
+  position: absolute;
+}
+
+.play{
+  height: 60px;
+  width: 90px;
+  margin-left: 440px;
+  margin-top: 460px;
+}
+
+.nameField{
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 230px;
+}
+
+a{
+  text-decoration: none;
+  font-size: 12pt;
+  font-family: 'Press Start 2P', cursive;
+}
+.landing{
+  margin-left: 200px;
+  margin-top: 100px;
+  position: absolute;
+}
+.gameContainer{
+
+  height: 650px;
+
+  background-color: lightblue;
+
   position: relative;
+}
+div.gameContainer{
+  background-image: url("VeridianForest.gif");
+  background-size: 600px;
+  font-family: 'Press Start 2P', cursive;
+}
+.screen{
+  width: 1000px;
+  margin: 0;
+  padding: 0;
+  margin-left: 200px;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  grid-column-gap: 0;
+  font-family: 'Press Start 2P', cursive;
+}
+.left{
+  background-color: red;
+}
+div.left{
+  background-image: url("forest.png");
+  background-size: cover;
+}
+.right{
+  background-color: blue;
+}
+div.right{
+  background-image: url("forest.png");
+  background-size: cover;
 }
 
 .dog{
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   background-color: red;
-  margin-top: 600px;
+  margin-top: 300px;
+}
+.critter:nth-child(odd){
+  margin-top: 100px;
+}
+
+.rat.squirrelMovement:nth-child(odd){
+  margin-top: 150px;
+}
+.rat.squirrelMovement.critter:nth-child(odd){
+  margin-top: 200px;
 }
 
 .critter, .rat{
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   background-color: blue;
  float: right;
+ position: absolute;
+ animation-name: squirrelMove;
+ animation-duration: 5s;
+  /*animation-fill-mode: both;*/
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
 
 .rat{
   background-color: grey;
-  margin-top: 50px;
+  margin-top: 20px;
   position: absolute;
 }
 
 .firstSquirrel{
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   background-color: grey;
   margin-top: 100px;
   position: absolute;
@@ -41,8 +147,8 @@
   animation-timing-function: ease-in-out;
 }
 .secondSquirrel{
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   background-color: brown;
   margin-top: 200px;
   position: absolute;
@@ -55,8 +161,8 @@
 
 }
 .thirdSquirrel{
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   background-color: orange;
   margin-top: 300px;
   position: absolute;
@@ -69,8 +175,8 @@
 
 }
 .fourthSquirrel{
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   background-color: black;
   margin-top: 400px;
   position: absolute;
@@ -83,17 +189,17 @@
 
 }
 .fifthSquirrel{
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   background-color: purple;
   margin-top: 500px;
   position: absolute;
-  animation-name: squirrelMove;
+  /*animation-name: squirrelMove;
   animation-duration: 1s;
   /*animation-fill-mode: both;*/
-  animation-iteration-count: infinite;
+  /*animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;*/*/
 
 }
 
