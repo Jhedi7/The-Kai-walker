@@ -141,7 +141,7 @@ div.dog{
 }
 
 
-
+ /*********************** DEATH ANIMATION (BROKE AT THE END AND HAD TO REMOVE :( ) ************************/
 .deathAnimation {
   animation-name: rotateZ;
   animation: rotatez 5s 3 alternate;

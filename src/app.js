@@ -13,7 +13,7 @@ window.onload = function () {
     $('.dog').css('top', $(this).scrollTop());
   });
 
-
+// ***************** ARROW KEY MOVEMENTS *****************
 $(document).keydown(function(event) {
   switch(event.which) {
 
@@ -46,6 +46,19 @@ $(document).keydown(function(event) {
     dog.css('left', '+=10px');
   }
 
+// ********************** COLLISION FUNCTION ***********************
+  function collision(rect1, rect2) {
+    if (rect1.x < rect2.x + rect2.width &&
+      rect1.x + rect1.width > rect2.x &&
+       rect1.y < rect2.y + rect2.height &&
+        rect1.height + rect1.y > rect2.y) {
+      console.log('collision');
+    }
+  }
+
+  // ********************** LOOP TO BE ABLE TO COLLIDE WITH EVERYTHING ON SCREEN ***********************
+
+
   function choose() {
     for (let i = 0; i < critterCollection.length; i++) {
       setInterval(collision(dog[0].getBoundingClientRect(),
@@ -56,16 +69,10 @@ $(document).keydown(function(event) {
 
   setInterval(choose, 250);
 
-  function collision(rect1, rect2) {
-    if (rect1.x < rect2.x + rect2.width &&
-      rect1.x + rect1.width > rect2.x &&
-       rect1.y < rect2.y + rect2.height &&
-        rect1.height + rect1.y > rect2.y) {
-      console.log('collision');
-    }
-  }
 
 
+
+// **********************  FUNCTION AND LOOP TO CREATE AND PLACE RANDOM ENEMIES ***********************
 
   for (let i = 0; i < 4; i++) {
     makeCritters();
@@ -104,12 +111,16 @@ $(document).keydown(function(event) {
     })
   }
 
+// ********************** SCORE FUNCTION (BROKE AT THE END) ***********************
+
   function addScore() {
     scoreBoard.css('font-size', '20px');
     scoreBoard.html(score);
 
   }
   addScore();
+
+ // ********************** FORM FUNCTION (BROKE AT THE END) ***********************
 
 let nameSubmit = $('#nameSubmit')
 
