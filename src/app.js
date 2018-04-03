@@ -1,59 +1,92 @@
 window.onload = function () {
 
-$('.gameContainer').scroll(function() {
+  alert('connected')
 
-    $('.dog').css('top', $(this).scrollTop());
-});
+// $('.gameContainer').scroll(function() {
+
+//     $('.dog').css('top', $(this).scrollTop());
+// });
 
   const gameContainer = $('.gameContainer')
   let dog = $('.dog');
   let critter = $('.critter');
   let score = 0;
   let scoreBoard = $('.scoreNumber');
-  let going;
-  const change = {
-    37: {
-      left: '-=.5px'
-    },
-    38: {
-      top: '-=.5px'
-    },
-    39: {
-      left: '+=.5px'
-    },
-    40: {
-      top: '+=.5px'
-    },
+  // let going;
+  // // const change = {
+  // //   37: {
+  // //     left: '-=.5px'
+  // //   },
+  // //   38: {
+  // //     top: '-=.5px'
+  // //   },
+  // //   39: {
+  // //     left: '+=.5px'
+  // //   },
+  // //   40: {
+  // //     top: '+=.5px'
+  // //   },
+  // // }
+
+  // // $(document).one('keydown', keyDown);
+
+  // // function keyDown(e) {
+  // //   $(document).one('keyup', keyup)
+  // //   let animation = change[e.which];
+  // //   event.preventDefault();
+  // //   going = setInterval(keepGoing, 1);
+  // //   function keepGoing() {
+  // //     $('.dog').css(animation);
+
+  // //   }
+
+  // // }
+  // //  function keyup(e) {
+
+  // //   clearInterval(going);
+  // //   $(document).one('keydown', keyDown);
+  // //   event.preventDefault();
+  // // }
+
+
+$(document).keydown(function(event) {
+  switch(event.which) {
+
+    case 38: dogUp();
+    break;
+    case 40: dogDown();
+    break;
+    case 37:  $('.dog').css('left','-=10');
+    console.log('left');
+    break;
+    case 39: dogRight();
+    break;
+    default: return;
   }
+  event.preventDefault();
 
-  $(document).one('keydown', keyDown);
+});
 
-  function keyDown(e) {
-    $(document).one('keyup', keyup)
-    let animation = change[e.which];
-    event.preventDefault();
-    going = setInterval(keepGoing, 1);
-    function keepGoing() {
-      $('.dog').css(animation);
+function dogUp() {
 
-    }
+  $('.dog').css('top', '-=10');
+}
 
-  }
+function dogDown() {
+  dog.css('top', '+=10px');
+}
 
+function dogLeft() {
+  dog.css('left', '-=10px');
 
+}
 
-  function keyup(e) {
-
-    clearInterval(going);
-    $(document).one('keydown', keyDown);
-    event.preventDefault();
-  }
+function dogRight() {
+  dog.css('left', '+=10px');
+}
 
 
-
-
-
-  window.setInterval(collisionDetection, );
+  //window.setInterval(collisionDetection, );
 
   function collisionDetection() {
     let dogWidth, dogHeight, dogX, dogY, critterWidth, critterHeight, critterX, critterY;
