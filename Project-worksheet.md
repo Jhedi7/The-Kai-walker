@@ -79,7 +79,7 @@ Based on the initial logic defined in the previous game phases section try and b
 
  - create a logic for selcting the dog div from the DOM and assigning it to the arrow keys.
 
- - create functions to rule the behavior of the criters (assign them to an object class)
+ - create functions to rule the behavior of the critters (assign them to an object class)
 
  - create a function to work out the collision behavior between the divs.
 
@@ -115,6 +115,30 @@ Helper functions should be generic enought that they can be reused in other appl
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  
 
+a way to not only make connection but loop over all of the items that share the same class on the gameboard!
+
+function collision(rect1, rect2) {
+    if (rect1.x < rect2.x + rect2.width &&
+      rect1.x + rect1.width > rect2.x &&
+       rect1.y < rect2.y + rect2.height &&
+        rect1.height + rect1.y > rect2.y) {
+      console.log('collision');
+    }
+  }
+
+  // ********************** LOOP TO BE ABLE TO COLLIDE WITH EVERYTHING ON SCREEN ***********************
+
+
+  function choose() {
+    for (let i = 0; i < critterCollection.length; i++) {
+      setInterval(collision(dog[0].getBoundingClientRect(),
+        critterCollection[i].getBoundingClientRect()
+      ), 250);
+    }
+  }
+
+  setInterval(choose, 250);
+
 ## jQuery Discoveries
  Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
 
@@ -123,6 +147,12 @@ Use this section to include a brief code snippet of functionality that you are p
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
+
+ the collision function was a pain. All of the first few iterations were flawed in some way or another. 
+
+ Multiple blown stack console errors.
+
+ 
 
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
