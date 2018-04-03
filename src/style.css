@@ -88,17 +88,22 @@ div.right{
 
 .dog{
   position: absolute;
-  height: 20px;
-  width: 20px;
-  background-color: red;
+  height: 170px;
+  width: 170px;
+  /*background-color: red;*/
   margin-top: 300px;
+}
+
+div.dog{
+  background-image: url("dog3.gif");
+  background-size: cover;
 }
 
 
 .critter {
   margin-right: 300px;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   float: right;
   position: absolute;
   animation-name: squirrelMove;
@@ -109,8 +114,8 @@ div.right{
 }
 .critter2{
   margin-right: 300px;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   float: right;
   position: absolute;
   animation-name: squirrelMove;
@@ -123,8 +128,8 @@ div.right{
 }
 .critter3{
   margin-right: 300px;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   float: right;
   position: absolute;
   animation-name: squirrelMove;
